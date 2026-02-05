@@ -1,0 +1,68 @@
+<div class="events">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Ciclo de <span class="accent">Actividades</span></h2>
+      <p class="section-subtitle">Eventos semanales que mantienen vivo el espíritu de conquista</p>
+    </div>
+    
+    <div class="current-day scroll-trigger">
+      <div class="current-day-indicator">
+        <span class="indicator-icon">📅</span>
+        <span class="indicator-text">Hoy es <strong>{{ currentDay }}</strong></span>
+      </div>
+    </div>
+    
+    <div class="events-timeline">
+      <div class="timeline-line"></div>
+      
+      <div class="events-grid">
+        <div class="event-card scroll-trigger" 
+             *ngFor="let event of events; let i = index"
+             [class.today]="isToday(event.day)"
+             [style.animation-delay]="i * 0.1 + 's'">
+          
+          <div class="event-day" [class.today]="isToday(event.day)">
+            <span class="day-text">{{ event.day }}</span>
+            <span class="day-icon">{{ event.icon }}</span>
+          </div>
+          
+          <div class="event-content">
+            <div class="event-header">
+              <h3 class="event-name">{{ event.name }}</h3>
+              <div class="event-time">
+                <span class="time-icon">🕒</span>
+                <span>{{ event.time }}</span>
+              </div>
+            </div>
+            
+            <p class="event-activity">{{ event.activity }}</p>
+            
+            <div class="event-details">
+              <div class="detail-item">
+                <span class="detail-label">Dificultad:</span>
+                <span class="detail-value" [class]="getDifficultyClass(event.difficulty)">
+                  {{ event.difficulty }}
+                </span>
+              </div>
+              
+              <div class="detail-item">
+                <span class="detail-label">Participantes:</span>
+                <span class="detail-value">{{ event.participants }}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="event-decoration" [class.today]="isToday(event.day)"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="events-note scroll-trigger">
+      <p>
+        <span class="note-icon">💡</span>
+        Los horarios pueden ajustarse según disponibilidad de miembros. 
+        Todos los eventos se coordinan a través de nuestro servidor de Discord.
+      </p>
+    </div>
+  </div>
+</div>

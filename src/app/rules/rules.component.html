@@ -1,0 +1,31 @@
+<div class="rules">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">El <span class="accent">Código</span> del Guerrero</h2>
+      <p class="section-subtitle">Nuestras reglas forjan la disciplina y unidad que nos distinguen</p>
+    </div>
+    
+    <div class="rules-grid">
+      <div class="rule-card scroll-trigger" 
+           *ngFor="let rule of rules; let i = index" 
+           [style.animation-delay]="i * 0.1 + 's'">
+        <div class="rule-icon" [class.green]="rule.color === 'green'" [class.gold]="rule.color === 'gold'">
+          {{ rule.icon }}
+        </div>
+        <div class="rule-content">
+          <h3 class="rule-title">{{ rule.title }}</h3>
+          <p class="rule-description">{{ rule.description }}</p>
+        </div>
+        <div class="rule-decoration" [class.green]="rule.color === 'green'" [class.gold]="rule.color === 'gold'"></div>
+      </div>
+    </div>
+    
+    <div class="rules-footer scroll-trigger">
+      <p class="rules-note">
+        <span class="note-icon">⚠️</span>
+        El incumplimiento repetido de estas reglas puede resultar en la expulsión del gremio. 
+        Valoramos la calidad sobre la cantidad.
+      </p>
+    </div>
+  </div>
+</div>

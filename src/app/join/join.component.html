@@ -1,0 +1,132 @@
+<div class="join">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Únete a las <span class="accent">Sombras</span></h2>
+      <p class="section-subtitle">Conviértete en un guardián del bosque oscuro y forja tu leyenda</p>
+    </div>
+    
+    <div class="join-content">
+      <div class="requirements scroll-trigger">
+        <h3 class="requirements-title">Requisitos para Ingresar</h3>
+        <p class="requirements-subtitle">Lo que necesitamos para mantener nuestra esencia</p>
+        
+        <div class="requirements-list">
+          <div class="requirement-item" *ngFor="let req of requirements">
+            <div class="requirement-icon">{{ req.icon }}</div>
+            <div class="requirement-content">
+              <h4>{{ req.text }}</h4>
+              <p>{{ req.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="requirements-note">
+          <div class="note-icon">💬</div>
+          <div class="note-content">
+            <p>¿No cumples algún requisito pero tienes mucho que aportar?</p>
+            <p><strong>¡Aún así postúlate!</strong> Valoramos la actitud y el potencial.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="join-form scroll-trigger">
+        <div class="form-header">
+          <h3>Solicitud de Ingreso</h3>
+          <p>Completa el formulario y te contactaremos por Discord</p>
+        </div>
+        
+        <div class="success-message" *ngIf="submitted">
+          <div class="success-icon">✅</div>
+          <div class="success-content">
+            <h4>Solicitud Enviada</h4>
+            <p>Te contactaremos en Discord dentro de las próximas 48 horas.</p>
+          </div>
+        </div>
+        
+        <form (ngSubmit)="submitApplication()" *ngIf="!submitted">
+          <div class="form-group">
+            <label for="name">Nombre Real</label>
+            <input 
+              type="text" 
+              id="name" 
+              [(ngModel)]="applicant.name" 
+              name="name" 
+              placeholder="Tu nombre real" 
+              required>
+          </div>
+          
+          <div class="form-group">
+            <label for="ign">Nombre en el Juego (IGN)</label>
+            <input 
+              type="text" 
+              id="ign" 
+              [(ngModel)]="applicant.ign" 
+              name="ign" 
+              placeholder="Tu nombre de personaje" 
+              required>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fame">Fama Total</label>
+              <input 
+                type="number" 
+                id="fame" 
+                [(ngModel)]="applicant.fame" 
+                name="fame" 
+                placeholder="Ej: 150000" 
+                min="0" 
+                required>
+            </div>
+            
+            <div class="form-group">
+              <label for="playtime">Horas Semanales</label>
+              <input 
+                type="number" 
+                id="playtime" 
+                [(ngModel)]="applicant.playtime" 
+                name="playtime" 
+                placeholder="Ej: 15" 
+                min="0" 
+                required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="motivation">Motivación para Unirte</label>
+            <textarea 
+              id="motivation" 
+              [(ngModel)]="applicant.motivation" 
+              name="motivation" 
+              placeholder="Cuéntanos por qué quieres unirte a Druidae Umbrae..." 
+              rows="4" 
+              required></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button 
+              type="submit" 
+              class="submit-btn" 
+              [disabled]="!isFormValid() || loading">
+              <span *ngIf="!loading">Enviar Solicitud</span>
+              <span *ngIf="loading">Enviando...</span>
+              <span class="btn-arrow" *ngIf="!loading">→</span>
+            </button>
+            
+            <button type="button" class="discord-btn" (click)="openDiscord()">
+              <span class="btn-icon">🎮</span>
+              <span>Unirse a Discord</span>
+            </button>
+          </div>
+        </form>
+        
+        <div class="form-footer">
+          <p>
+            <span class="info-icon">ℹ️</span>
+            Todas las solicitudes son revisadas personalmente por nuestro Consejo de Druidas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

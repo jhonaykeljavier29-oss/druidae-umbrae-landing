@@ -1,0 +1,22 @@
+<div class="stats">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Nuestro <span class="accent">Dominio</span></h2>
+      <p class="section-subtitle">Cifras que demuestran nuestro poder en las tierras de Albion</p>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-card scroll-trigger" *ngFor="let stat of stats; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+        <div class="stat-icon" [class.green]="stat.color === 'green'" [class.gold]="stat.color === 'gold'">
+          {{ stat.icon }}
+        </div>
+        <div class="stat-content">
+          <div class="stat-value">{{ stat.value }}</div>
+          <h3 class="stat-label">{{ stat.label }}</h3>
+          <p class="stat-description">{{ stat.description }}</p>
+        </div>
+        <div class="stat-decoration"></div>
+      </div>
+    </div>
+  </div>
+</div>
