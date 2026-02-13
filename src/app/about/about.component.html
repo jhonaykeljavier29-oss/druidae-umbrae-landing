@@ -1,50 +1,46 @@
 <div class="about">
   <div class="container">
-    <div class="about-content">
-      <div class="about-text scroll-trigger">
-        <div class="section-header">
-          <h2 class="section-title">Nuestra <span class="accent">Esencia</span></h2>
-          <div class="section-divider"></div>
-        </div>
-        
-        <div class="about-story">
-          <h3 class="story-title">Los Guardianes del Bosque Oscuro</h3>
-          <p class="story-text">
-            Fundado bajo la luna llena del solsticio de invierno, Druidae Umbrae nació de la unión 
-            de guerreros que compartían una visión: proteger las tierras salvajes de Albion mientras 
-            forjábamos un legado de honor y poder.
-          </p>
-          <p class="story-text">
-            Lo que comenzó como un pequeño grupo de aventureros se ha convertido en una de las fuerzas 
-            más respetadas en las tierras negras. Nuestro nombre evoca el misterio de los druidas 
-            ancestrales y la protección de las sombras del bosque.
-          </p>
-        </div>
-        
-        <div class="philosophy">
-          <h3 class="philosophy-title">Nuestra Filosofía</h3>
-          <div class="philosophy-grid">
-            <div class="philosophy-item" *ngFor="let item of philosophyItems">
-              <div class="philosophy-icon">{{ item.icon }}</div>
-              <div class="philosophy-content">
-                <h4>{{ item.title }}</h4>
-                <p>{{ item.description }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Sección superior: dos columnas -->
+    <div class="about-grid">
+      <!-- Columna de texto -->
+      <div class="about-text">
+        <h2 class="section-title">Nuestra <span class="accent">Esencia</span></h2>
+        <div class="section-divider"></div>
+        <h3 class="story-title">Los Guardianes del Bosque Oscuro</h3>
+        <p class="story-text">
+          Fundado bajo la luna llena del solsticio de invierno, Druidae Umbrae nació de la unión 
+          de guerreros que compartían una visión: proteger las tierras salvajes de Albion mientras 
+          forjábamos un legado de honor y poder.
+        </p>
+        <p class="story-text">
+          Lo que comenzó como un pequeño grupo de aventureros se ha convertido en una de las fuerzas 
+          más respetadas en las tierras negras. Nuestro nombre evoca el misterio de los druidas 
+          ancestrales y la protección de las sombras del bosque.
+        </p>
       </div>
       
-      <div class="about-visual scroll-trigger">
-        <div class="visual-frame">
-          <div class="visual-main">
-            <div class="visual-overlay">
-              <h3>Druidae Umbrae</h3>
-              <p>Desde 2021</p>
-            </div>
+      <!-- Columna de imagen (logo ampliado con estilo) -->
+      <div class="about-image">
+        <div class="image-frame">
+          <img src="assets/logo-druidae.png" alt="Druidae Umbrae Logo" class="logo-image">
+          <div class="image-overlay"></div>
+        </div>
+        <!-- Elementos decorativos alrededor -->
+        <div class="image-decoration top-right"></div>
+        <div class="image-decoration bottom-left"></div>
+      </div>
+    </div>
+    
+    <!-- Sección inferior: Filosofía en grid -->
+    <div class="philosophy-section">
+      <h3 class="philosophy-title">Nuestra Filosofía</h3>
+      <div class="philosophy-grid">
+        <div class="philosophy-item" *ngFor="let item of philosophyItems">
+          <div class="philosophy-icon">{{ item.icon }}</div>
+          <div class="philosophy-content">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.description }}</p>
           </div>
-          <div class="visual-accent"></div>
-          <div class="visual-accent secondary"></div>
         </div>
       </div>
     </div>

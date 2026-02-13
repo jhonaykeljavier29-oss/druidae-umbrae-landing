@@ -16,14 +16,14 @@ export class AboutComponent {
       icon: '🤝'
     },
     {
-      title: 'Honor y Estrategia',
-      description: 'Luchamos con honor y planificamos cada movimiento. La victoria sin gloria no es victoria.',
+     title: 'Honor y Estrategia',
+     description: 'Luchamos con honor y planificamos cada movimiento. La victoria sin gloria no es victoria.',
       icon: '♟️'
-    },
+   },
     {
-      title: 'Crecimiento Colectivo',
-      description: 'El éxito individual se celebra, pero el crecimiento colectivo se prioriza.',
-      icon: '📈'
+     title: 'Crecimiento Colectivo',
+     description: 'El éxito individual se celebra, pero el crecimiento colectivo se prioriza.',
+     icon: '📈'
     },
     {
       title: 'Respeto a la Naturaleza',
