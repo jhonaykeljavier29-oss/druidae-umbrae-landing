@@ -139,6 +139,26 @@ section {
   transform: translateY(0);
 }
 
+/* Si el contenedor con .scroll-trigger se hace visible, revelar elementos hijos comunes */
+.scroll-trigger.visible .rule-card,
+.scroll-trigger.visible .rules-footer,
+.scroll-trigger.visible .fade-in,
+.scroll-trigger.visible .fade-in-delay-1,
+.scroll-trigger.visible .fade-in-delay-2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mostrar tarjetas y elementos de `stats` cuando el contenedor se vuelve visible */
+.scroll-trigger.visible .stat-card,
+.scroll-trigger.visible .stats-footer,
+.scroll-trigger.visible .stat-value,
+.scroll-trigger.visible .stat-content,
+.scroll-trigger.visible .stat-decoration {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   :root {

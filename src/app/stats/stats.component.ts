@@ -20,28 +20,28 @@ export class StatsComponent {
   stats: StatCard[] = [
     {
       icon: '👥',
-      value: '150+',
+      value: '30+',
       label: 'Miembros Activos',
       description: 'Guerreros unidos bajo la misma bandera',
       color: 'green'
     },
     {
       icon: '🗓️',
-      value: '25+',
+      value: '7+',
       label: 'Eventos Semanales',
       description: 'Actividades estratégicas organizadas',
       color: 'gold'
     },
     {
       icon: '🏰',
-      value: '8',
+      value: '0',
       label: 'Castillos Conquistados',
       description: 'Fortalezas bajo nuestro dominio',
       color: 'green'
     },
     {
       icon: '🗺️',
-      value: '12',
+      value: '0',
       label: 'Territorios Controlados',
       description: 'Tierras protegidas por nuestro gremio',
       color: 'gold'

@@ -147,4 +147,35 @@
     text-align: center;
     gap: var(--spacing-xs);
   }
+  /* Estilos para las listas dentro de las tarjetas */
+.rule-points {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-sm) 0 0;
+}
+
+.rule-points li {
+  color: var(--color-cream);
+  opacity: 0.9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-xs);
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.rule-points li::before {
+  content: '•';
+  color: var(--color-accent-green);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Ajuste para que las tarjetas no sean demasiado altas en móvil */
+@media (max-width: 768px) {
+  .rule-points li {
+    font-size: 0.85rem;
+  }
+}
 }
